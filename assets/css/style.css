@@ -15,3 +15,36 @@
 			transition: 1s all;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+/**
+ * TRABALHANDO NO MENU
+ */
+
+.menu {
+	display: flex;
+	min-height: 70px;
+	background-color: darkorange;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.menu-help {
+	display: flex;
+}
+
+.menu-help-link {
+	color: white;
+	font-weight: bold;
+	padding: 10px 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-help-link:hover {
+	background-color: rgba(0, 0, 0, .4);
+}
+
+.menu-help-link i {
+	padding: 10px;
+	border-radius: 50%;
+}

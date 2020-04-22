@@ -1,0 +1,28 @@
+/**
+ * Responsividade
+ */
+
+/** EXTRA SMALL */
+@media screen and (max-width: 575px) {
+	.menu-help-link span {font-size: 11px}
+}
+
+/** SMALL */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+
+}
+
+/** MEDIUM */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/** LARGE */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/** EXTRA LARGE */
+@media screen and (min-width: 1200px) {
+
+}
