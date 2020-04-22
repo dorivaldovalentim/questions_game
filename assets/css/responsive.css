@@ -4,6 +4,8 @@
 
 /** EXTRA SMALL */
 @media screen and (max-width: 575px) {
+	.menu {flex-direction: column;}
+	
 	.menu-help-link span {font-size: 11px}
 
 	.main-section {padding-top: 40px}

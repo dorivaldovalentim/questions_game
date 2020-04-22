@@ -30,6 +30,12 @@
 	justify-content: space-between;
 }
 
+.question-position {
+	padding: 10px;
+	color: white;
+	font-weight: bolder;
+}
+
 .menu-help {
 	display: flex;
 }
@@ -95,12 +101,12 @@
 }
 
 
-.answer-link.correct {
+.answer-link.correct, .answer-link.correct:hover {
 	background-color: rgba(0, 255, 0, .6);
 }
 
 
-.answer-link.wrong {
+.answer-link.wrong, .answer-link.wrong:hover {
 	background-color: rgba(255, 0, 0, .9);
 }
 

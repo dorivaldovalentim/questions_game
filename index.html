@@ -2,12 +2,12 @@
 <html lang="en">
 	<head>
 		<title>Jogo de Perguntas</title>
-
+		
 		<meta charset="UTF-8" />
 		<meta name="author" content="Dorivaldo Valentim" />
 		<meta name="description" content="Este é um jogo de perguntas" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+		
 		<!-- CSS -->
 		<link rel="stylesheet" href="assets/css/all.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
@@ -17,7 +17,7 @@
 	<body>
 		<header>
 			<nav class="menu">
-				<span></span>
+				<span class="question-position">Pergunta 1 / 10</span>
 				<ul class="menu-help">
 					<li class="menu-help-item">
 						<a href="#" class="menu-help-link">
@@ -58,28 +58,28 @@
 			<div class="answer-section">
 				<ul class="answer-list">
 					<li class="answer-item">
-						<a href="#" class="answer-link animated">
+						<a href="#" class="answer-link" data-correct="true">
 							<span class="answer-line">A</span>
 							HTML
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link correct">
+						<a href="#" class="answer-link" data-correct="false">
 							<span class="answer-line">B</span>
 							CSS
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link wrong">
+						<a href="#" class="answer-link" data-correct="false">
 							<span class="answer-line">C</span>
 							JavaScript
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link">
+						<a href="#" class="answer-link" data-correct="false">
 							<span class="answer-line">D</span>
 							PHP
 						</a>
@@ -88,6 +88,7 @@
 			</div>
 		</section>
 		
+		<!-- SCRIPT -->
 		<script src="assets/js/script.js"></script>
 	</body>
 </html>
