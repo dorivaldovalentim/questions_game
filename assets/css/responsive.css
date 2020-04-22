@@ -5,6 +5,18 @@
 /** EXTRA SMALL */
 @media screen and (max-width: 575px) {
 	.menu-help-link span {font-size: 11px}
+
+	.main-section {padding-top: 40px}
+
+	.question-text {font-size: 20pt}
+
+	.answer-list {width: 90vw}
+
+	.answer-link {
+		text-align: left;
+		padding-left: 80px
+	}
+
 }
 
 /** SMALL */

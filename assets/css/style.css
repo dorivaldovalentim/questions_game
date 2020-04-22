@@ -1,3 +1,5 @@
+@import 'animations.css';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -47,4 +49,70 @@
 .menu-help-link i {
 	padding: 10px;
 	border-radius: 50%;
+}
+
+/**
+ * TRABALHANDO NA SECÇÃO DE PERGUNTAS E RESPOSTAS
+ */
+
+.main-section {
+	background-color: #AAA;
+	min-height: calc(100vh - 70px);
+	padding-top: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.question-text {
+	font-size: 25pt;
+	margin-bottom: 20px;
+}
+
+.answer-list {
+	width: 450px;
+}
+
+.answer-item {
+	margin: 10px auto;
+	display: flex;
+}
+
+.answer-link {
+	padding: 20px;
+	border-radius: 10px;
+	flex-basis: 100%;
+	font-size: 20px;
+	font-weight: bolder;
+	color: white;
+	position: relative;
+	background-color: rgba(255, 255, 255, .2);
+}
+
+.answer-link.animated {
+	animation: answering 1s infinite;
+}
+
+
+.answer-link.correct {
+	background-color: rgba(0, 255, 0, .6);
+}
+
+
+.answer-link.wrong {
+	background-color: rgba(255, 0, 0, .9);
+}
+
+.answer-line {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, .4);
+	padding: 20px;
+}
+
+.answer-link:hover {
+	color: white;
+	background-color: darkorange;
 }
