@@ -1,0 +1,10 @@
+{
+	"id": 1,
+	"question": "Who are you?",
+	"answers": [
+		{"text": "I´m you", "status": true},
+		{"text": "I´m him", "status": false},
+		{"text": "I´m them", "status": false},
+		{"text": "I´m us", "status": false}
+	]
+}

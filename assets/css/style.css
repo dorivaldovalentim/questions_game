@@ -1,0 +1,17 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	overflow: hidden;
+	object-fit: cover;
+	text-align: center;
+	text-decoration: none;
+	list-style-type: none;
+	box-sizing: border-box;
+	-webkit-transition: 1s all;
+	   -moz-transition: 1s all;
+		-ms-transition: 1s all;
+	     -o-transition: 1s all;
+			transition: 1s all;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
