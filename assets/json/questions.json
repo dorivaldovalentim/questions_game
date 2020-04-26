@@ -1,10 +1,21 @@
-{
-	"id": 1,
-	"question": "Who are you?",
-	"answers": [
-		{"text": "I´m you", "status": true},
-		{"text": "I´m him", "status": false},
-		{"text": "I´m them", "status": false},
-		{"text": "I´m us", "status": false}
-	]
-}
+[
+	{
+		"id": 1,
+		"text": "Quem foi Madara Uchiha?",
+		"answers": [
+			{"text": "O mais foda de Naruto", "status": true},
+			{"text": "Um Uchiha", "status": false},
+			{"text": "O personagem principal de Naruto", "status": false},
+			{"text": "O melhor amigo de Hashirama", "status": false}
+		]
+	}, {
+		"id": 1,
+		"text": "Quem venceria numa batalha entre Minato namikaze e Tobirama Senju?",
+		"answers": [
+			{"text": "I´m you", "status": true},
+			{"text": "I´m him", "status": false},
+			{"text": "I´m them", "status": false},
+			{"text": "I´m us", "status": false}
+		]
+	}
+]
