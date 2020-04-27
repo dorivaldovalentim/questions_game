@@ -4,7 +4,7 @@
 	margin: 0;
 	padding: 0;
 	border: none;
-	overflow: hidden;
+	overflow-x: hidden;
 	object-fit: cover;
 	text-align: center;
 	text-decoration: none;
@@ -86,7 +86,7 @@
 }
 
 .answer-link {
-	padding: 20px;
+	padding: 20px 50px;
 	border-radius: 10px;
 	flex-basis: 100%;
 	font-size: 18px;
@@ -114,6 +114,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	height: 100%;
 	background-color: rgba(0, 0, 0, .4);
 	padding: 20px;
 }
