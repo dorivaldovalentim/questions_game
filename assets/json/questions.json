@@ -30,7 +30,7 @@
 		"id": 4,
 		"text": "Qual é o primeiro planeta do sistema solar?",
 		"answers": [
-			{"text": "Mercúrio", "status": false},
+			{"text": "Nepturno", "status": false},
 			{"text": "Terra", "status": false},
 			{"text": "Vénus", "status": false},
 			{"text": "Mercúrio", "status": true}

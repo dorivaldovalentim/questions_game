@@ -67,10 +67,14 @@ const operations = {
 	},
 
 	changeQuestion: function(question) {
-		console.log(question)
+		console.log(question);
 		this.incrementQuestionPosition();
-		this.current_question = question;
-		this.showQuestions(question);
+		if(!(this.question_position > this.questions_number)) {
+			this.current_question = question;
+			this.showQuestions(question);
+		} else {
+			alert('Está de parabéns por ter terminado o jogo');
+		}
 	},
 
 	incrementQuestionPosition() {
@@ -80,6 +84,11 @@ const operations = {
 	loadGame: function() {
 		this.getQuestions();
 		this.questions_number = this.questions.length;
+		this.showQuestions(this.questions[0]);
+	},
+
+	restart: function() {
+		this.question_position = 1;
 		this.showQuestions(this.questions[0]);
 	}
 };
