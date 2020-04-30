@@ -12,7 +12,16 @@ window.onload = function() {
 	function answer(event) {
 		var answer = event.target;
 		answer.classList.toggle('animated');
-		setTimeout(() => {
+		operations.giveAnswer(answer).then(response => {
+			setTimeout(function() {
+				if(response)
+					operations.changeQuestion(operations.questions[operations.question_position]);
+				else
+					operations.restart();
+			}, 1000);
+			getReferences();
+		}).catch(error => console.log(error));
+		/* setTimeout(() => {
 			if(answer.getAttribute('data-correct') == 'true') {
 				answer.classList.toggle('animated');
 				answer.classList.toggle('correct');
@@ -24,8 +33,7 @@ window.onload = function() {
 				alert('Você errou! Você vai recomeçar o jogo')
 				operations.restart();
 			}
-			getReferences();
-		}, 2000);
+		}, 2000); */
 
 	}
 

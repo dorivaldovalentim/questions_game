@@ -6,7 +6,7 @@ const operations = {
 	current_question: null,
 
 	getQuestions: function() {
-		var url = '/assets/json/questions.json';
+		var url = './assets/json/questions.json';
 		var ajax = new XMLHttpRequest();
 		
 		ajax.open('get', url, false);
@@ -64,6 +64,23 @@ const operations = {
 		`;
 
 		document.querySelector('section.main-section').innerHTML = structure;
+	},
+
+	giveAnswer(answer) {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if(answer.getAttribute('data-correct') == 'true') {
+					answer.classList.toggle('animated');
+					answer.classList.toggle('correct');
+					resolve(true);
+				} else {
+					answer.classList.toggle('animated');
+					answer.classList.toggle('wrong');
+					document.querySelector('[data-correct="true"]').classList.toggle('correct');
+					resolve(false);
+				}
+			}, 2000);
+		});
 	},
 
 	changeQuestion: function(question) {
