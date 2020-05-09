@@ -125,5 +125,13 @@ const operations = {
 			alert('Não pode pular');
 			return false;
 		}
+	},
+
+	idea: function() {
+		var answer = document.querySelector("[data-correct=true]");
+		
+		answer.classList.toggle('idea');
+
+		return true;
 	}
 };

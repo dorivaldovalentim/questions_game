@@ -121,14 +121,16 @@ body {background-color: #AAA;}
 	animation: answering 1s infinite;
 }
 
-
 .answer-link.correct, .answer-link.correct:hover {
 	background-color: rgba(0, 255, 0, .6);
 }
 
-
 .answer-link.wrong, .answer-link.wrong:hover {
 	background-color: rgba(255, 0, 0, .9);
+}
+
+.answer-link.idea, .answer-link.idea:hover {
+	background-color: turquoise;
 }
 
 .answer-line {

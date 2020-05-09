@@ -12,6 +12,7 @@ function getReferences() {
 
 function answer(event) {
 	var answer = event.target;
+	answer.classList.remove('idea');
 	answer.classList.toggle('animated');
 	operations.giveAnswer(answer).then(response => {
 		if(response)
@@ -26,9 +27,19 @@ function answer(event) {
 function skip(event) {
 	var element = event.target;
 	var parent = element.parentElement;
-	
+
 	if(operations.skip())
 		parent.disabled = 'disabled';
-		
+
+	getReferences();
+}
+
+function idea() {
+	var element = event.target;
+	var parent = element.parentElement;
+
+	if(operations.idea())
+		parent.disabled = 'disabled';
+
 	getReferences();
 }
