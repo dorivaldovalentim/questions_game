@@ -18,6 +18,13 @@
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+*::selection {
+	color: white;
+	background-color: darkorange;
+}
+
+body {background-color: #AAA;}
+
 /**
  * TRABALHANDO NO MENU
  */
@@ -41,11 +48,19 @@
 }
 
 .menu-help-link {
+	cursor: help;
 	color: white;
 	font-weight: bold;
-	padding: 10px 20px;
 	display: flex;
 	flex-direction: column;
+	border-radius: 0;
+	background-color: transparent;
+}
+
+.menu-help-link[disabled], .menu-help-link[disabled]:hover {
+	background-color: rgba(255, 255, 255, .7);
+	border: 1px solid rgba(0, 0, 0, .02);
+	cursor: no-drop;
 }
 
 .menu-help-link:hover {
@@ -54,7 +69,14 @@
 
 .menu-help-link i {
 	padding: 10px;
-	border-radius: 50%;
+	border-radius: 0;
+	width: 100%;
+}
+
+.menu-help-link i, .menu-help-link span {
+	display: block;
+	padding: 10px 20px;
+	flex-basis: 100%;
 }
 
 /**
@@ -62,8 +84,7 @@
  */
 
 .main-section {
-	background-color: #AAA;
-	min-height: calc(100vh - 70px);
+	min-height: calc(100vh - 80px);
 	padding-top: 100px;
 	display: flex;
 	flex-direction: column;

@@ -23,7 +23,7 @@ const operations = {
 	showQuestions: function(question) {
 		this.current_question = question;
 
-		document.querySelector('span.question-position').innerHTML = `Pergunta ${this.question_position} / 10`;
+		document.querySelector('span.question-position').innerHTML = `Pergunta ${this.question_position} / ${this.questions.length - 1}`;
 
 		var structure = `
 			<div class="questions-section">
@@ -66,7 +66,7 @@ const operations = {
 		document.querySelector('section.main-section').innerHTML = structure;
 	},
 
-	giveAnswer(answer) {
+	giveAnswer: function(answer) {
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
 				if(answer.getAttribute('data-correct') == 'true') {
@@ -85,16 +85,22 @@ const operations = {
 
 	changeQuestion: function(question) {
 		console.log(question);
+		this.current_question = question;
+		this.showQuestions(question);
+	},
+
+	nextQuestion: function() {
 		this.incrementQuestionPosition();
-		if(!(this.question_position > this.questions_number)) {
-			this.current_question = question;
-			this.showQuestions(question);
+
+		if(!(this.question_position > this.questions_number - 1)) {
+			this.current_question = this.questions[this.question_position];
+			this.showQuestions(this.questions[this.question_position]);
 		} else {
 			alert('Está de parabéns por ter terminado o jogo');
 		}
 	},
 
-	incrementQuestionPosition() {
+	incrementQuestionPosition: function() {
 		this.question_position++;
 	},
 
@@ -105,7 +111,19 @@ const operations = {
 	},
 
 	restart: function() {
+		alert('Errou! Recomeçando')
 		this.question_position = 1;
 		this.showQuestions(this.questions[0]);
+	},
+
+	skip: function() {
+		if(!((this.question_position + 1) == this.questions_number)) {
+			this.incrementQuestionPosition();
+			this.changeQuestion(this.questions[this.question_position]);
+			return true;
+		} else {
+			alert('Não pode pular');
+			return false;
+		}
 	}
 };
