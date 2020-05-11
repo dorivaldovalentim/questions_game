@@ -1,3 +1,10 @@
+/*********************************************
+ * Style.css
+ *
+ * Folha de css responsável por toda aplicação
+ *********************************************
+ */
+
 @import 'animations.css';
 
 * {
