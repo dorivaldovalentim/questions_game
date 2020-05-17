@@ -8,6 +8,7 @@
 
 // Início do jogo
 operations.loadGame();
+operations.showResults();
 getReferences();
 
 /**

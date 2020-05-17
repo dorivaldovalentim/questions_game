@@ -14,6 +14,7 @@ const operations = {
 	 * @property questions: armazena todas as perguntas do jogo
 	 * @property questions_number: número de perguntas que o jogo contém
 	 * @property question_position: armazena a posição da pergunta actual
+	 * @property results: armazena todos os resultados e mensagens do jogo
 	 * @property current_question: armazena a pergunta actual
 	 */
 
@@ -21,6 +22,11 @@ const operations = {
 	questions_number: 0,
 	question_position: 1,
 	current_question: null,
+	results: [
+		{type: 'success', message: 'Sucesso'},
+		{type: 'error', message: 'Erro'},
+		{type: 'warning', message: 'Aviso'}
+	],
 
 	/**
 	 * @method getQuestions()
@@ -102,6 +108,44 @@ const operations = {
 
 		document.querySelector('section.main-section').innerHTML = structure;
 	},
+
+
+	/**
+	 * @method showResults()
+	 * 
+	 * Este método, assim como o método showQuestions() é responsável pela
+	 * apresentação de mensagens e resultados do jogo com apenas algumas
+	 * diferenças, este método não recebe parâmetros, mas pega o atributo
+	 * results e faz um ciclo a fim de pegar todos os resultados e apresen-
+	 * tá-lo no ecrã do jogador (navegador)
+	 * 
+	 * @params any
+	 * @return void
+	 */
+	showResults: function() {
+		var resultsSection = document.querySelector('section.results-section');
+		var structure = ``;
+
+		this.results.forEach(key => {
+			structure += `
+				<div class="result result-${key.type} slideInTop">
+					<p class="text-left">
+						<i class="fa fa-${key.type == 'success' ? 'check-circle' : key.type == 'error' ? 'times-circle' : 'exclamation-circle'}" aria-hidden="true"></i>
+						<span>${key.message}</span>
+					</p>
+					
+					<a href="#" onclick='removeResult(event, ${JSON.stringify(key)})' class="close-result-button" id="close-result-button">
+						<i class="fa fa-times" aria-hidden="true"></i>	
+					</a>
+				</div>
+			`;
+		});
+
+
+		resultsSection.innerHTML = structure;
+	},
+
+
 
 	/**
 	 * @method giveAnswer()
