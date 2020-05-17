@@ -278,7 +278,11 @@ const operations = {
 	 * @return void
 	 */
 	restart: function() {
-		this.addResult({type: 'error', message: 'Você errou feio!'})
+		document.querySelectorAll('.menu-help-link').forEach(key => {
+			key.disabled = '';
+		});
+
+		this.addResult({type: 'error', message: 'Você errou feio!'});
 		this.question_position = 1;
 		this.showQuestions(this.questions[0]);
 	},
