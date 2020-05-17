@@ -213,9 +213,9 @@ body {background-color: #AAA;}
 }
 
 .slideInTop {
-	animation: slideInTop 2s;
+	animation: slideInTop 1s;
 }
 
 .slideOutDown {
-	animation: slideOutDown 2s;
+	animation: slideOutDown 1s;
 }

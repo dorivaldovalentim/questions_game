@@ -22,11 +22,7 @@ const operations = {
 	questions_number: 0,
 	question_position: 1,
 	current_question: null,
-	results: [
-		{type: 'success', message: 'Sucesso'},
-		{type: 'error', message: 'Erro'},
-		{type: 'warning', message: 'Aviso'}
-	],
+	results: [],
 
 	/**
 	 * @method getQuestions()
@@ -242,8 +238,7 @@ const operations = {
 		if(!(this.question_position > this.questions_number - 1)) {
 			this.changeQuestion(this.questions[this.question_position]);
 		} else {
-			this.addResult({type: 'success', message: 'Waw! Está de parábens, conseguiu terminar o jogo'})
-			this.showResults();
+			this.addResult({type: 'success', message: 'Waw! Está de parábens, conseguiu terminar o jogo'});
 		}
 	},
 
@@ -283,7 +278,7 @@ const operations = {
 	 * @return void
 	 */
 	restart: function() {
-		alert('Errou! Recomeçando')
+		this.addResult({type: 'error', message: 'Você errou feio!'})
 		this.question_position = 1;
 		this.showQuestions(this.questions[0]);
 	},
