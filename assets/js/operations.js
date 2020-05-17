@@ -76,28 +76,28 @@ const operations = {
 			<div class="answer-section">
 				<ul class="answer-list">
 					<li class="answer-item">
-						<a href="#" class="answer-link" data-correct="${this.current_question.answers[0].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[0].status}">
 							<span class="answer-line">A</span>
 							${this.current_question.answers[0].text}
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link" data-correct="${this.current_question.answers[1].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[1].status}">
 							<span class="answer-line">B</span>
 							${this.current_question.answers[1].text}
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link" data-correct="${this.current_question.answers[2].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[2].status}">
 							<span class="answer-line">C</span>
 							${this.current_question.answers[2].text}
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link" data-correct="${this.current_question.answers[3].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[3].status}">
 							<span class="answer-line">D</span>
 							${this.current_question.answers[3].text}
 						</a>

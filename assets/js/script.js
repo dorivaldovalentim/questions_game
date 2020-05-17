@@ -9,25 +9,6 @@
 // Início do jogo
 operations.loadGame();
 operations.showResults();
-getReferences();
-
-/**
- * @function getReferences()
- * 
- * Esta função simplesmente pega as respostas e adiciona
- * a elas o evento click que redireciona para a função
- * answer
- * 
- * @params any
- * @return void
- */
-function getReferences() {
-	document.querySelectorAll('.answer-link').forEach(key => {
-		key.addEventListener('click', answer);
-	});
-
-	console.log(document.querySelectorAll('.answer-link'))
-}
 
 /**
  * @function answer()
@@ -44,15 +25,16 @@ function getReferences() {
  */
 function answer(event) {
 	var answer = event.target;
+	console.log(answer)
 	answer.classList.remove('idea');
 	answer.classList.toggle('animated');
 	operations.giveAnswer(answer).then(response => {
-		if(response)
-			operations.nextQuestion();
-		else
-			operations.restart();
-		
-		getReferences();
+		setTimeout(function() {
+			if(response)
+				operations.nextQuestion();
+			else
+				operations.restart();
+		}, 1000);
 	}).catch(error => console.log(error));
 }
 
@@ -72,8 +54,6 @@ function skip(event) {
 
 	if(operations.skip())
 		parent.disabled = 'disabled';
-
-	getReferences();
 }
 
 /**
@@ -93,8 +73,6 @@ function idea(event) {
 
 	if(operations.idea())
 		parent.disabled = 'disabled';
-
-	getReferences();
 }
 
 function removeResult(event, result) {
@@ -108,5 +86,4 @@ function removeResult(event, result) {
 		parent.style.display = 'none';
 		operations.removeResult(result);
 	}, 1000);
-
 }
