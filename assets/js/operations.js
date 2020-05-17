@@ -109,6 +109,40 @@ const operations = {
 		document.querySelector('section.main-section').innerHTML = structure;
 	},
 
+	/**
+	 * @method addResult()
+	 * 
+	 * Este método recebe um resultado e adiciona na property results
+	 * logo depois chama o método responsável por apresentar todos os
+	 * resultados
+	 * 
+	 * @param {Object} result
+	 */
+	addResult: function(result) {
+		this.results.push(result);
+		this.showResults();
+	},
+
+	/**
+	 * @method removeResult()
+	 * 
+	 * Este método recebe um resultado e remove da property results
+	 * logo depois chama o método responsável por apresentar todos os
+	 * resultados
+	 * 
+	 * @param {Object} result
+	 */
+	removeResult: function(result) {
+		var results = this.results;
+		this.results = [];
+
+		results.forEach(function(key) {
+			if(!(key.message == result.message)) {
+				operations.results.push(key);
+			}
+		});
+
+	},
 
 	/**
 	 * @method showResults()
@@ -140,7 +174,6 @@ const operations = {
 				</div>
 			`;
 		});
-
 
 		resultsSection.innerHTML = structure;
 	},
@@ -209,7 +242,8 @@ const operations = {
 		if(!(this.question_position > this.questions_number - 1)) {
 			this.changeQuestion(this.questions[this.question_position]);
 		} else {
-			alert('Está de parabéns por ter terminado o jogo');
+			this.addResult({type: 'success', message: 'Waw! Está de parábens, conseguiu terminar o jogo'})
+			this.showResults();
 		}
 	},
 

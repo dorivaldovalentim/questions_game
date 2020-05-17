@@ -96,3 +96,17 @@ function idea(event) {
 
 	getReferences();
 }
+
+function removeResult(event, result) {
+	var element = event.target;
+	var parent = element.parentElement.parentElement
+
+	parent.classList.remove('slideInTop');
+	parent.classList.add('slideOutDown');
+
+	setTimeout(function() {
+		parent.style.display = 'none';
+		operations.removeResult(result);
+	}, 1000);
+
+}
