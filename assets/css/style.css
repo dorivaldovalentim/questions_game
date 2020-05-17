@@ -179,6 +179,7 @@ body {background-color: #AAA;}
 	margin: 5px;
 	padding: 15px 25px 15px 15px;
 	color: #FFF;
+	overflow-y: hidden;
 	border-radius: 10px;
 	background-color: rgba(255, 255, 255, .2);
 	position: relative;
@@ -189,11 +190,14 @@ body {background-color: #AAA;}
 .close-result-button {
 	color: #FFF;
 	cursor: pointer;
-	padding: 0 10px;
 	font-size: 10pt;
 	background-color: transparent;
 	position: absolute;
 	right: 0;
+}
+
+.close-result-button i.fa {
+	padding: 20px 20px;
 }
 
 .result-success {
