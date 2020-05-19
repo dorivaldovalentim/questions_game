@@ -302,7 +302,7 @@ const operations = {
 			this.changeQuestion(this.questions[this.question_position]);
 			return true;
 		} else {
-			alert('Não pode pular');
+			this.addResult({type: 'warning', message: 'Não pode pular'});
 			return false;
 		}
 	},
