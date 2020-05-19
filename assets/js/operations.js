@@ -43,9 +43,8 @@ const operations = {
 
 		if(ajax.status == 200) {
 			this.questions = JSON.parse(ajax.responseText);
-			console.log(this.questions)
 		} else if(ajax.status == 404) {
-			console.log('Não encontrado')
+			this.addResult({type: 'warning', message: 'Perguntas em ' + url + ' não encontradas'});
 		}
 	},
 
@@ -217,7 +216,6 @@ const operations = {
 	 * @return void
 	 */
 	changeQuestion: function(question) {
-		console.log(question);
 		this.current_question = question;
 		this.showQuestions(question);
 	},

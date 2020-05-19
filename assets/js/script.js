@@ -25,7 +25,6 @@ operations.showResults();
  */
 function answer(event) {
 	var answer = event.target;
-	console.log(answer)
 	answer.classList.remove('idea');
 	answer.classList.toggle('animated');
 	operations.giveAnswer(answer).then(response => {
@@ -35,7 +34,7 @@ function answer(event) {
 			else
 				operations.restart();
 		}, 1000);
-	}).catch(error => console.log(error));
+	}).catch(error => alert(error));
 }
 
 /**
