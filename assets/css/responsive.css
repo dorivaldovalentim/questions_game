@@ -11,7 +11,10 @@
 	
 	.menu-help-link span {font-size: 11px}
 
-	.main-section {padding-top: 40px}
+	.main-section {
+		padding-top: 40px;
+		min-height: calc(100vh - 110px)
+	}
 
 	.question-text {font-size: 20pt}
 
@@ -22,11 +25,12 @@
 		padding-left: 80px
 	}
 
+	.results-section {width: 100%;}
 }
 
 /** SMALL */
 @media screen and (min-width: 576px) and (max-width: 767px) {
-
+	.results-section {width: 100%;}
 }
 
 /** MEDIUM */
