@@ -45,6 +45,8 @@ const operations = {
 			this.questions = JSON.parse(ajax.responseText);
 		} else if(ajax.status == 404) {
 			this.addResult({type: 'warning', message: 'Perguntas em ' + url + ' não encontradas'});
+		} else {
+			this.addResult({type: 'warning', message: 'Erro ao carregar perguntas'});
 		}
 	},
 
