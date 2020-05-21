@@ -237,6 +237,9 @@ const operations = {
 			this.changeQuestion(this.questions[this.question_position]);
 		} else {
 			this.addResult({type: 'success', message: 'Waw! Está de parábens, conseguiu terminar o jogo'});
+			setTimeout(function() {
+				window.location = "response.html";
+			}, 2000);
 		}
 	},
 

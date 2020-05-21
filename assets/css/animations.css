@@ -19,3 +19,9 @@
 	from {opacity: 1; position: relative; top: 0;}
 	to {opacity: 0; position: relative; top: 70px;}
 }
+
+@keyframes smallToBig {
+	from {font-size: 50pt}
+	50% {font-size: 80pt;}
+	to {font-size: 50pt}
+}

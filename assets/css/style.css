@@ -49,6 +49,8 @@ body {background-color: #AAA;}
 	justify-content: space-between;
 }
 
+.menu.response {justify-content: center;}
+
 .question-position {
 	padding: 10px;
 	color: white;
@@ -90,6 +92,8 @@ body {background-color: #AAA;}
 	padding: 10px 20px;
 	flex-basis: 100%;
 }
+
+.menu-item-link {color: white; font-weight: bolder;}
 
 /**
  * TRABALHANDO NA SECÇÃO DE PERGUNTAS E RESPOSTAS
@@ -159,6 +163,9 @@ body {background-color: #AAA;}
 	background-color: darkorange;
 }
 
+.animated-emoji {
+	animation: smallToBig 1s infinite;
+}
 
 /**
  * TRABALHANDO NA SECÇÃO DE MENSAGENS DE RESULTADOS
