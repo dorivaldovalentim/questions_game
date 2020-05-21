@@ -250,6 +250,11 @@ const operations = {
 	 */
 	incrementQuestionPosition: function() {
 		this.question_position++;
+
+		if(!document.querySelector('.menu-help-link').disabled)
+			if(this.question_position == (this.questions_number - 2)) {
+				this.addResult({type: 'warning', message: 'Última oportunidade de usar a ajuda pular'});
+			}
 	},
 
 	/**

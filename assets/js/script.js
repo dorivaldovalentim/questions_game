@@ -51,8 +51,10 @@ function skip(event) {
 	var element = event.target;
 	var parent = element.parentElement;
 
-	if(operations.skip())
-		parent.disabled = 'disabled';
+	parent.disabled = 'disabled';
+
+	if(!operations.skip())
+		parent.disabled = '';
 }
 
 /**
