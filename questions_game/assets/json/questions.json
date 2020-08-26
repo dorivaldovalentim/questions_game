@@ -1,0 +1,93 @@
+[
+	{
+		"id": 1,
+		"text": "Qual das seguintes opções é um glícido?",
+		"answers": [
+			{"text": "CN<sub>2</sub>O", "status": false},
+			{"text": "CH<sub>4</sub>O", "status": false},
+			{"text": "CHP<sub>3</sub>F", "status": false},
+			{"text": "CH<sub>2</sub>O", "status": true}
+		]
+	}, {
+		"id": 2,
+		"text": "Quantos planetas possui o sistema solar?",
+		"answers": [
+			{"text": "9", "status": true},
+			{"text": "7", "status": false},
+			{"text": "4", "status": false},
+			{"text": "11", "status": false}
+		]
+	}, {
+		"id": 3,
+		"text": "Quem foi o primeiro homem a pisar na Lua?",
+		"answers": [
+			{"text": "Petric William", "status": false},
+			{"text": "Johnny Holmes", "status": false},
+			{"text": "Neil Armstrong", "status": true},
+			{"text": "Susan Test", "status": false}
+		]
+	}, {
+		"id": 4,
+		"text": "Qual é o primeiro planeta do sistema solar?",
+		"answers": [
+			{"text": "Nepturno", "status": false},
+			{"text": "Terra", "status": false},
+			{"text": "Vénus", "status": false},
+			{"text": "Mercúrio", "status": true}
+		]
+	}, {
+		"id": 5,
+		"text": "Qual é o valor real de &pi;?",
+		"answers": [
+			{"text": "1,45560912", "status": false},
+			{"text": "3,14159265", "status": true},
+			{"text": "2,278495", "status": false},
+			{"text": "3,150234", "status": false}
+		]
+	}, {
+		"id": 6,
+		"text": "Segundo Mohs: qual é a posição de dureza Feldspato?",
+		"answers": [
+			{"text": "2º", "status": false},
+			{"text": "9º", "status": false},
+			{"text": "5º", "status": false},
+			{"text": "6º", "status": true}
+		]
+	}, {
+		"id": 7,
+		"text": "Quem foi Billy Graham?",
+		"answers": [
+			{"text": "Pastor, protestante e pregador", "status": true},
+			{"text": "Presidente", "status": false},
+			{"text": "Actor", "status": false},
+			{"text": "Apresentador", "status": false}
+		]
+	}, {
+		"id": 8,
+		"text": "Qual das opções apresenta os primeiros 5 números primos?",
+		"answers": [
+			{"text": "0, 2, 5, 9 e 11", "status": false},
+			{"text": "1, 3, 5, 7 e 10", "status": false},
+			{"text": "2, 3, 5, 7 e 11", "status": true},
+			{"text": "3, 5, 7, 9 e 11", "status": false}
+		]
+	}, {
+		"id": 9,
+		"text": "Em que ano se deu início a primeira Guerra Mundial?",
+		"answers": [
+			{"text": "1962", "status": false},
+			{"text": "1975", "status": false},
+			{"text": "1918", "status": false},
+			{"text": "1914", "status": true}
+		]
+	}, {
+		"id": 10,
+		"text": "Quem foi o inventor da lâmpada?",
+		"answers": [
+			{"text": "Johnny Mathius", "status": false},
+			{"text": "Tomas Edisom", "status": true},
+			{"text": "Brian Stuck", "status": false},
+			{"text": "Nenhum a cima citado", "status": false}
+		]
+	}
+]
