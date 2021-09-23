@@ -1,0 +1,49 @@
+/************************************************************
+ * Responsive.css
+ *
+ * Folha de css responsável responsividade total da aplicação
+ ************************************************************
+ */
+
+/** EXTRA SMALL */
+@media screen and (max-width: 575px) {
+	.menu {flex-direction: column;}
+	
+	.menu-help-link span {font-size: 11px}
+
+	.main-section {
+		padding-top: 40px;
+		min-height: calc(100vh - 110px)
+	}
+
+	.question-text {font-size: 20pt}
+
+	.answer-list {width: 90vw}
+
+	.answer-link {
+		text-align: justify;
+		padding-left: 80px
+	}
+
+	.results-section {width: 100%;}
+}
+
+/** SMALL */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	.results-section {width: 100%;}
+}
+
+/** MEDIUM */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/** LARGE */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/** EXTRA LARGE */
+@media screen and (min-width: 1200px) {
+
+}

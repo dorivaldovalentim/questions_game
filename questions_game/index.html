@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+	<head>
+		<title>Jogo de Perguntas</title>
+		
+		<!-- Meta Tags -->
+		<meta charset="UTF-8" />
+		<meta name="author" content="Dorivaldo Valentim" />
+		<meta name="keyword" content="Perguntas, jogo, question, game, answer" />
+		<meta name="description" content="Este é um jogo de perguntas" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- CSS -->
+		<link rel="stylesheet" href="assets/css/all.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
+	</head>
+
+	<body>
+		<!-- [HEADER] -->
+		<header>
+			<nav class="menu">
+				<span class="question-position"></span>
+				<ul class="menu-help">
+					<li class="menu-help-item">
+						<button class="menu-help-link" onclick="skip(event)">
+							<i class="fas fa-angle-double-right"></i>
+							<span class="title">Pular</span>
+						</button>
+					</li>
+
+					<li class="menu-help-item">
+						<button class="menu-help-link" onclick="idea(event)">
+							<i class="fas fa-star"></i>
+							<span class="title">Ideia</span>
+						</button>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- [ / HEADER] -->
+
+		<!-- [MAIN SECTION] -->
+		<section class="main-section"></section>
+		<section class="results-section"></section>
+		<section class="loader-section">
+			<h2 class="text-white">Carregando</h2>
+			<div class="lds-ripple"><div></div><div></div></div>
+		</section>
+		<!-- [ / MAIN SECTION] -->
+		
+		<!-- SCRIPT -->
+		<script src="assets/js/operations.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>
