@@ -65,40 +65,40 @@ const operations = {
 	showQuestions: function(question) {
 		this.current_question = question;
 
-		document.querySelector('span.question-position').innerHTML = `Pergunta ${this.question_position} / ${this.questions.length - 1}`;
+		document.querySelector('span.question-position').innerHTML = `Pergunta ${this.question_position} / ${this.questions.length}`;
 
 		var structure = `
 			<div class="questions-section">
-				<h1 class="question-text">${this.current_question.text}</h1>
+				<h1 class="question-text">${this.current_question.data.question.en}</h1>
 			</div>
 
 			<div class="answer-section">
 				<ul class="answer-list">
 					<li class="answer-item">
-						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[0].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.data.answers.iv[0].status}">
 							<span class="answer-line">A</span>
-							${this.current_question.answers[0].text}
+							${this.current_question.data.answers.iv[0].answer}
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[1].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.data.answers.iv[1].status}">
 							<span class="answer-line">B</span>
-							${this.current_question.answers[1].text}
+							${this.current_question.data.answers.iv[1].answer}
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[2].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.data.answers.iv[2].status}">
 							<span class="answer-line">C</span>
-							${this.current_question.answers[2].text}
+							${this.current_question.data.answers.iv[2].answer}
 						</a>
 					</li>
 
 					<li class="answer-item">
-						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.answers[3].status}">
+						<a href="#" class="answer-link" onclick="answer(event)" data-correct="${this.current_question.data.answers.iv[3].status}">
 							<span class="answer-line">D</span>
-							${this.current_question.answers[3].text}
+							${this.current_question.data.answers.iv[3].answer}
 						</a>
 					</li>
 				</ul>
