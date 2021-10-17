@@ -35,11 +35,13 @@ const operations = {
 	 * @return void
 	 */
 	getQuestions: function() {
-		var url = './assets/json/questions.json';
+		var url = 'https://cloud.squidex.io/api/content/questions-game/questions';
 		var ajax = new XMLHttpRequest();
 		
 		ajax.open('get', url, false);
 		ajax.send();
+
+		console.log(JSON.parse(ajax.response).items);
 
 		if(ajax.status == 200) {
 			this.questions = JSON.parse(ajax.responseText);
