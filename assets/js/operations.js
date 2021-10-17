@@ -44,7 +44,7 @@ const operations = {
 		console.log(JSON.parse(ajax.response).items);
 
 		if(ajax.status == 200) {
-			this.questions = JSON.parse(ajax.responseText);
+			this.questions = JSON.parse(ajax.response).items;
 		} else if(ajax.status == 404) {
 			this.addResult({type: 'warning', message: 'Perguntas em ' + url + ' não encontradas'});
 		} else {
