@@ -34,21 +34,21 @@ const operations = {
 	 * @params any
 	 * @return void
 	 */
-	getQuestions: function() {
+	getQuestions: function () {
 		var url = 'https://cloud.squidex.io/api/content/questions-game/questions';
 		var ajax = new XMLHttpRequest();
-		
+
 		ajax.open('get', url, false);
 		ajax.send();
 
 		console.log(JSON.parse(ajax.response).items);
 
-		if(ajax.status == 200) {
+		if (ajax.status == 200) {
 			this.questions = JSON.parse(ajax.response).items;
-		} else if(ajax.status == 404) {
-			this.addResult({type: 'warning', message: 'Perguntas em ' + url + ' não encontradas'});
+		} else if (ajax.status == 404) {
+			this.addResult({ type: 'warning', message: 'Perguntas em ' + url + ' não encontradas' });
 		} else {
-			this.addResult({type: 'warning', message: 'Erro ao carregar perguntas'});
+			this.addResult({ type: 'warning', message: 'Erro ao carregar perguntas' });
 		}
 	},
 
@@ -62,7 +62,7 @@ const operations = {
 	 * @param {Object} question
 	 * @return void
 	 */
-	showQuestions: function(question) {
+	showQuestions: function (question) {
 		this.current_question = question;
 
 		document.querySelector('span.question-position').innerHTML = `Pergunta ${this.question_position} / ${this.questions.length}`;
@@ -117,7 +117,7 @@ const operations = {
 	 * 
 	 * @param {Object} result
 	 */
-	addResult: function(result) {
+	addResult: function (result) {
 		this.results.push(result);
 		this.showResults();
 	},
@@ -131,12 +131,12 @@ const operations = {
 	 * 
 	 * @param {Object} result
 	 */
-	removeResult: function(result) {
+	removeResult: function (result) {
 		var results = this.results;
 		this.results = [];
 
-		results.forEach(function(key) {
-			if(!(key.message == result.message)) {
+		results.forEach(function (key) {
+			if (!(key.message == result.message)) {
 				operations.results.push(key);
 			}
 		});
@@ -155,7 +155,7 @@ const operations = {
 	 * @params any
 	 * @return void
 	 */
-	showResults: function() {
+	showResults: function () {
 		var resultsSection = document.querySelector('section.results-section');
 		var structure = ``;
 
@@ -191,10 +191,10 @@ const operations = {
 	 * @param {HTMLSelector} answer
 	 * @return boolean
 	 */
-	giveAnswer: function(answer) {
+	giveAnswer: function (answer) {
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
-				if(answer.getAttribute('data-correct') == 'true') {
+				if (answer.getAttribute('data-correct') == 'true') {
 					answer.classList.toggle('animated');
 					answer.classList.toggle('correct');
 					resolve(true);
@@ -219,7 +219,7 @@ const operations = {
 	 * @param {Object} question
 	 * @return void
 	 */
-	changeQuestion: function(question) {
+	changeQuestion: function (question) {
 		this.current_question = question;
 		this.showQuestions(question);
 	},
@@ -234,15 +234,15 @@ const operations = {
 	 * @params any
 	 * @return void
 	 */
-	nextQuestion: function() {
+	nextQuestion: function () {
 		this.incrementQuestionPosition();
 
-		if(!(this.question_position > this.questions_number - 1)) {
+		if (!(this.question_position > this.questions_number - 1)) {
 			this.changeQuestion(this.questions[this.question_position]);
 		} else {
-			this.addResult({type: 'success', message: 'Waw! Está de parábens, conseguiu terminar o jogo'});
+			this.addResult({ type: 'success', message: 'Waw! Está de parábens, conseguiu terminar o jogo' });
 			document.querySelector('.loader-section').style.display = 'flex';
-			setTimeout(function() {
+			setTimeout(function () {
 				window.location = "response.html";
 			}, 5000);
 		}
@@ -256,12 +256,12 @@ const operations = {
 	 * @params any
 	 * @return void
 	 */
-	incrementQuestionPosition: function() {
+	incrementQuestionPosition: function () {
 		this.question_position++;
 
-		if(!document.querySelector('.menu-help-link').disabled)
-			if(this.question_position == (this.questions_number - 2)) {
-				this.addResult({type: 'warning', message: 'Última oportunidade de usar a ajuda pular'});
+		if (!document.querySelector('.menu-help-link').disabled)
+			if (this.question_position == (this.questions_number - 2)) {
+				this.addResult({ type: 'warning', message: 'Última oportunidade de usar a ajuda pular' });
 			}
 	},
 
@@ -273,7 +273,7 @@ const operations = {
 	 * @params any
 	 * @return void
 	 */
-	loadGame: function() {
+	loadGame: function () {
 		this.getQuestions();
 		this.questions_number = this.questions.length;
 		this.showQuestions(this.questions[0]);
@@ -288,12 +288,12 @@ const operations = {
 	 * @params any
 	 * @return void
 	 */
-	restart: function() {
+	restart: function () {
 		document.querySelectorAll('.menu-help-link').forEach(key => {
 			key.disabled = '';
 		});
 
-		this.addResult({type: 'error', message: 'Você errou feio!'});
+		this.addResult({ type: 'error', message: 'Você errou feio!' });
 		this.question_position = 1;
 		this.showQuestions(this.questions[0]);
 	},
@@ -307,13 +307,13 @@ const operations = {
 	 * @params any
 	 * @return boolean
 	 */
-	skip: function() {
-		if(!((this.question_position + 1) == this.questions_number)) {
+	skip: function () {
+		if (!((this.question_position + 1) == this.questions_number)) {
 			this.incrementQuestionPosition();
 			this.changeQuestion(this.questions[this.question_position]);
 			return true;
 		} else {
-			this.addResult({type: 'warning', message: 'Não pode pular'});
+			this.addResult({ type: 'warning', message: 'Não pode pular' });
 			return false;
 		}
 	},
@@ -326,9 +326,9 @@ const operations = {
 	 * @params any
 	 * @return boolean
 	 */
-	idea: function() {
+	idea: function () {
 		var answer = document.querySelector("[data-correct=true]");
-		
+
 		answer.classList.toggle('idea');
 
 		return true;
